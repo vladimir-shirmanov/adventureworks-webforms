@@ -1,11 +1,17 @@
 pipeline {
     agent any
     
+    environment {
+        MSBuild = 'C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe'
+    }
 
     stages {
         stage('Build') {
+            environment {
+                PLATFORM='any cpu'
+            }
             steps {
-                echo 'Building...'
+                bat '${env.MSBuild} AdventureWorks.sln -p:Platform=${env.PLATFORM} -p:Configurations=Debug'
             }
         }
 
