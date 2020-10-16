@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        MSBuild = 'C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe'
+        MSBuild = 'C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe'
     }
 
     stages {
