@@ -11,14 +11,10 @@ pipeline {
                 PLATFORM='any cpu'
             }
             steps {
-                nuget {
-                    echo 'Restoring nuget packages'
-                    bat "\"${env.MS_BUILD}\" AdventureWorks.sln -t:restore"
-                }
-                build {
-                    echo 'building solution'
-                    bat "\"${env.MS_BUILD}\" AdventureWorks.sln -p:Platform=\"${env.PLATFORM}\" -p:Configurations=Debug"
-                }
+                echo 'Restoring nuget packages'
+                bat "\"${env.MS_BUILD}\" AdventureWorks.sln -t:restore"
+                echo 'building solution'
+                bat "\"${env.MS_BUILD}\" AdventureWorks.sln -p:Platform=\"${env.PLATFORM}\" -p:Configurations=Debug"
             }
         }
 
