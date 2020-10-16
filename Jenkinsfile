@@ -11,7 +11,7 @@ pipeline {
                 PLATFORM='any cpu'
             }
             steps {
-                bat "\"${env.MS_BUILD}\" AdventureWorks.sln -p:Platform=${env.PLATFORM} -p:Configurations=Debug"
+                bat "\"${env.MS_BUILD}\" AdventureWorks.sln -p:Platform=\"${env.PLATFORM}\" -p:Configurations=Debug"
             }
         }
 
